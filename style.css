@@ -2719,3 +2719,70 @@ button:focus {
 }
 
 /* ...existing code continues... */
+/* ...existing code... */
+
+/* Section Label for "Treatments" */
+.section.service-sec .head-con .section-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--primary-blue), #1e4bd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Nunito Sans', sans-serif;
+    position: relative;
+}
+
+.section.service-sec .head-con .section-label::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--primary-blue);
+    border-radius: 1px;
+}
+
+.section.service-sec .head-con .common-h {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: var(--black);
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.2;
+    position: relative;
+}
+
+.section.service-sec .head-con .common-h span {
+    color: var(--primary-blue);
+    background: linear-gradient(135deg, var(--primary-blue), #1e4bd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section.service-sec .head-con .common-h::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--orange), var(--primary-blue));
+    border-radius: 2px;
+}
+.small-heading{
+    display: block;
+    font-size: 1.5em;
+    color: var(--primary-blue);
+}
+
+/* ...existing code continues... */
