@@ -3375,3 +3375,462 @@ button:focus {
         height: 12px;
     }
 }
+/* ...existing code... */
+
+/* Service Section 2 - Urgent Care */
+.section.service-sec-2 {
+    padding: 120px 0;
+    background: linear-gradient(135deg,
+        rgba(248, 250, 252, 1) 0%,
+        rgba(241, 245, 249, 1) 50%,
+        rgba(248, 250, 252, 1) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.section.service-sec-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(35, 86, 232, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(151, 58, 12, 0.03) 0%, transparent 50%);
+    z-index: 1;
+}
+
+/* Header Section */
+.section.service-sec-2 .head-con {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 80px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 25px;
+}
+
+.section.service-sec-2 .head-con::before {
+    content: 'Specialized Services';
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary-blue), #1e4bd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Nunito Sans', sans-serif;
+    position: relative;
+}
+
+.section.service-sec-2 .head-con::after {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: var(--primary-blue);
+    border-radius: 1px;
+}
+
+.section.service-sec-2 .head-con .common-h {
+    font-size: 3.2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: var(--black);
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.3;
+    position: relative;
+    margin-top: 40px;
+}
+
+.section.service-sec-2 .head-con .common-h span {
+    color: var(--primary-blue);
+    background: linear-gradient(135deg, var(--primary-blue), #1e4bd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 900;
+}
+
+.section.service-sec-2 .head-con .common-h::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--orange), var(--primary-blue));
+    border-radius: 2px;
+}
+
+.section.service-sec-2 .head-con p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.7);
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Services Container */
+.section.service-sec-2 .ser-con {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* Service Card Wrapper */
+.section.service-sec-2 .ser-wrapper {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 40px 30px;
+    box-shadow:
+        0 20px 60px rgba(35, 86, 232, 0.08),
+        0 8px 25px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section.service-sec-2 .ser-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--orange));
+    transition: height 0.4s ease;
+}
+
+.section.service-sec-2 .ser-wrapper:hover::before {
+    height: 8px;
+}
+
+.section.service-sec-2 .ser-wrapper:hover {
+    transform: translateY(-15px);
+    box-shadow:
+        0 30px 80px rgba(35, 86, 232, 0.15),
+        0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: rgba(35, 86, 232, 0.2);
+}
+
+/* Service Image */
+.section.service-sec-2 .ser-wrapper figure {
+    margin: 0 0 25px 0;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 280px;
+    aspect-ratio: 1;
+}
+
+.section.service-sec-2 .ser-wrapper figure::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(35, 86, 232, 0.1) 0%,
+        transparent 50%,
+        rgba(151, 58, 12, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.section.service-sec-2 .ser-wrapper:hover figure::after {
+    opacity: 1;
+}
+
+.section.service-sec-2 .ser-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
+}
+
+.section.service-sec-2 .ser-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+/* Service Title */
+.section.service-sec-2 .ser-wrapper .pos-h {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black);
+    margin: 20px 0;
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.3;
+    position: relative;
+}
+
+.section.service-sec-2 .ser-wrapper .pos-h::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary-blue);
+    border-radius: 1px;
+    transition: width 0.4s ease;
+}
+
+.section.service-sec-2 .ser-wrapper:hover .pos-h::after {
+    width: 60px;
+}
+
+/* Service Content */
+.section.service-sec-2 .ser-wrapper .inner-contents {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.section.service-sec-2 .ser-wrapper .inner-contents p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 30px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+/* Service Button */
+.section.service-sec-2 .ser-wrapper .btn-wrapper {
+    margin-top: auto;
+}
+
+.section.service-sec-2 .ser-wrapper .btn {
+    background: linear-gradient(135deg, var(--primary-blue), #1e4bd8);
+    color: var(--white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section.service-sec-2 .ser-wrapper .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--orange), #b8470f);
+    transition: left 0.4s ease;
+}
+
+.section.service-sec-2 .ser-wrapper .btn:hover::before {
+    left: 0;
+}
+
+.section.service-sec-2 .ser-wrapper .btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.section.service-sec-2 .ser-wrapper .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(35, 86, 232, 0.3);
+}
+
+/* Special highlighting for urgent care */
+.section.service-sec-2 .ser-wrapper:first-child {
+    border: 2px solid rgba(220, 38, 38, 0.2);
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(254, 242, 242, 0.9) 100%);
+}
+
+.section.service-sec-2 .ser-wrapper:first-child::before {
+    background: linear-gradient(90deg, #dc2626, #ef4444);
+}
+
+.section.service-sec-2 .ser-wrapper:first-child .pos-h {
+    color: #dc2626;
+}
+
+.section.service-sec-2 .ser-wrapper:first-child .pos-h::after {
+    background: #dc2626;
+}
+
+.section.service-sec-2 .ser-wrapper:first-child .btn {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.section.service-sec-2 .ser-wrapper:first-child .btn::before {
+    background: linear-gradient(135deg, var(--primary-blue), #1e4bd8);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .section.service-sec-2 .head-con .common-h {
+        font-size: 2.8rem;
+    }
+
+    .section.service-sec-2 .ser-con {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 992px) {
+    .section.service-sec-2 {
+        padding: 80px 0;
+    }
+
+    .section.service-sec-2 .head-con .common-h {
+        font-size: 2.4rem;
+    }
+
+    .section.service-sec-2 .ser-con {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .section.service-sec-2 .ser-wrapper {
+        padding: 35px 25px;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section.service-sec-2 .head-con {
+        margin-bottom: 60px;
+        padding: 0 20px;
+    }
+
+    .section.service-sec-2 .head-con .common-h {
+        font-size: 2rem;
+    }
+
+    .section.service-sec-2 .ser-con {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 25px;
+    }
+
+    .section.service-sec-2 .ser-wrapper {
+        padding: 30px 20px;
+        min-height: 350px;
+    }
+
+    .section.service-sec-2 .ser-wrapper figure {
+        max-width: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section.service-sec-2 .head-con .common-h {
+        font-size: 1.8rem;
+    }
+
+    .section.service-sec-2 .ser-wrapper {
+        padding: 25px 15px;
+        min-height: 320px;
+    }
+
+    .section.service-sec-2 .ser-wrapper figure {
+        max-width: 200px;
+    }
+
+    .section.service-sec-2 .ser-wrapper .pos-h {
+        font-size: 1.3rem;
+    }
+
+    .section.service-sec-2 .ser-wrapper .inner-contents p {
+        font-size: 14px;
+    }
+
+    .section.service-sec-2 .ser-wrapper .btn {
+        padding: 10px 25px;
+        font-size: 13px;
+    }
+}
+
+/* Animation on scroll */
+@media (prefers-reduced-motion: no-preference) {
+    .section.service-sec-2 .ser-wrapper {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .section.service-sec-2 .ser-wrapper:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .section.service-sec-2 .ser-wrapper:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .section.service-sec-2 .ser-wrapper:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Performance optimization */
+@media (prefers-reduced-motion: reduce) {
+    .section.service-sec-2 .ser-wrapper {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .section.service-sec-2 .ser-wrapper:hover {
+        transform: none;
+    }
+}
+
+/* ...existing code continues... */
