@@ -69,10 +69,8 @@
             serviceCards.forEach(card => {
                 serviceObserver.observe(card);
             });
-        });
 
-        // Hide hidden text elements (for accessibility)
-        document.addEventListener('DOMContentLoaded', function() {
+            // Hide hidden text elements (for accessibility)
             const hiddenTexts = document.querySelectorAll('.hid-tex');
             hiddenTexts.forEach(text => {
                 text.style.display = 'block';
@@ -81,3 +79,92 @@
                 text.style.height = '0';
             });
         });
+
+       // Insurance Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.section.insurance-sec .logo-carousel');
+    const items = document.querySelectorAll('.section.insurance-sec .logo-slider .item');
+    const prevBtn = document.querySelector('.section.insurance-sec .carousel-prev');
+    const nextBtn = document.querySelector('.section.insurance-sec .carousel-next');
+    const dots = document.querySelectorAll('.section.insurance-sec .carousel-dots .dot');
+
+    if (!carousel || !items.length) return;
+
+    let currentIndex = 0;
+    const itemWidth = items[0].offsetWidth + 30; // item width + gap
+    const visibleItems = Math.floor(carousel.offsetWidth / itemWidth);
+    const maxIndex = Math.max(0, items.length - visibleItems);
+
+    function updateCarousel() {
+        const translateX = -(currentIndex * itemWidth);
+        carousel.style.transform = `translateX(${translateX}px)`;
+
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === Math.floor(currentIndex / visibleItems));
+        });
+    }
+
+    function nextSlide() {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = maxIndex;
+        }
+        updateCarousel();
+    }
+
+    // Event listeners
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index * visibleItems;
+            if (currentIndex > maxIndex) currentIndex = maxIndex;
+            updateCarousel();
+        });
+    });
+
+    // Auto-play carousel
+    let autoPlayInterval = setInterval(nextSlide, 4000);
+
+    // Pause on hover
+    const slider = document.querySelector('.section.insurance-sec .logo-slider');
+    if (slider) {
+        slider.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayInterval);
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            autoPlayInterval = setInterval(nextSlide, 4000);
+        });
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const newItemWidth = items[0].offsetWidth + 30;
+        const newVisibleItems = Math.floor(carousel.offsetWidth / newItemWidth);
+        if (newVisibleItems !== visibleItems) {
+            currentIndex = 0;
+            updateCarousel();
+        }
+    });
+
+    // Initial setup
+    updateCarousel();
+});
