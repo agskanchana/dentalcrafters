@@ -101,6 +101,11 @@ body {
     padding: 8px;
     border-radius: 50%;
     background: rgba(35, 86, 232, 0.1);
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-icon:hover {
@@ -711,8 +716,9 @@ button:focus {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: fadeInRight 1s ease-out 0.5s both;
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+    /* animation: fadeInRight 1s ease-out 0.5s both; */
+         animation: fadeInSlideUp 1s ease-out 0.5s both;
     font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -725,7 +731,7 @@ button:focus {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    animation: fadeInUp 1s ease-out 0.7s both;
+     animation: fadeInSlideUp 1s ease-out 0.7s both;
 }
 
 /* Animations */
@@ -6500,7 +6506,7 @@ button:focus {
     border-radius: 2px;
 }
 
-.contact-info {
+.footer .contact-info {
     display: flex;
     flex-direction: column;
     gap: 25px;
