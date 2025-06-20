@@ -680,3 +680,49 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 })();
+
+// Add this to your existing script.js file
+
+// Share toggle functionality
+function shareToggle() {
+    const shareToggle = document.getElementById("share-toggle");
+    if (shareToggle) {
+        shareToggle.classList.toggle("active");
+    }
+}
+
+// Close share menu when clicking outside
+document.addEventListener('click', function(event) {
+    const shareButton = document.querySelector('.share-button');
+    const shareToggle = document.getElementById("share-toggle");
+
+    if (shareToggle && shareButton && !shareButton.contains(event.target)) {
+        shareToggle.classList.remove("active");
+    }
+});
+
+// Add smooth scrolling for footer navigation
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate footer elements on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'slideInUp 0.6s ease forwards';
+            }
+        });
+    }, observerOptions);
+
+    // Observe footer columns
+    const footerColumns = document.querySelectorAll('.footer-column');
+    footerColumns.forEach((column, index) => {
+        column.style.opacity = '0';
+        column.style.transform = 'translateY(30px)';
+        column.style.animationDelay = `${index * 0.2}s`;
+        observer.observe(column);
+    });
+});
